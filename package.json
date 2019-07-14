@@ -1,0 +1,24 @@
+{
+  "name": "tic-tac-cljs",
+  "version": "1.0.0",
+  "description": "Tic-Tac-Toe in ClojureScript",
+  "dependencies": {
+    "create-react-class": "^15.6.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaymondBerglind/tic-tac-cljs.git"
+  },
+  "author": "Raymond Berglind",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RaymondBerglind/tic-tac-cljs/issues"
+  },
+  "homepage": "https://github.com/RaymondBerglind/tic-tac-cljs#readme"
+}
