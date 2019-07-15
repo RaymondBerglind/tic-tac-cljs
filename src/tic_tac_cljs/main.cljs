@@ -1,18 +1,8 @@
 (ns tic-tac-cljs.main
-  (:require [reagent.core :as r]))
-
-(defn box
-  []
-  [:div
-   {:style {:background "#EEE"
-            :height "80px"
-            :width "80px"}}])
-
-(defn app
-  []
-  [box])
+  (:require [reagent.core :as r]
+            [tic-tac-cljs.view.arena :refer [arena]]))
 
 (defn main
   []
-  (r/render [app]
+  (r/render [arena]
             (.getElementById js/document "app")))
