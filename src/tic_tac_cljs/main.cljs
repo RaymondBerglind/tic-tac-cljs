@@ -1,8 +1,8 @@
 (ns tic-tac-cljs.main
   (:require [reagent.core :as r]
-            [tic-tac-cljs.view.arena :refer [arena]]))
+            [tic-tac-cljs.view.game :refer [game]]))
 
 (defn main
   []
-  (r/render [arena]
+  (r/render [game]
             (.getElementById js/document "app")))
