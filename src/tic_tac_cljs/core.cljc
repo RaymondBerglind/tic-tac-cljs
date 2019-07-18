@@ -37,6 +37,20 @@
          (str))
      player))
 
+(defn get-check-for-box
+  {:test (fn []
+           (is (= (get-check-for-box {:board ["..."
+                                              "O.."
+                                              "..."]
+                                      :current-player "X"}
+                                     {:row 1
+                                      :column 0})
+                  "O")))}
+  [state options]
+  (-> (nth (:board state) (:row options))
+      (nth (:column options))
+      (str)))
+
 (defn check-box
   {:test (fn []
            (is (= (check-box {:board ["..."
@@ -77,6 +91,18 @@
          {:current-player player}))
 
 (defn handle-box-selection
+  {:test (fn []
+           (is (= (handle-box-selection {:board ["..."
+                                                 "..."
+                                                 "..."]
+                                         :current-player "X"}
+                                        {:row 0
+                                         :column 1
+                                         :player "X"})
+                  {:board [".X."
+                           "..."
+                           "..."]
+                   :current-player "O"})))}
   [state options]
   (-> (check-box state options)
       (toggle-player (if (= (:current-player state)

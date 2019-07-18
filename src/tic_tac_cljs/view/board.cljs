@@ -12,6 +12,7 @@
                   [idx row]
                   [board-row {:key (str "row_" idx)
                               :trigger-event (:trigger-event props)
+                              :state (:state props)
                               :row-index idx
                               :row row}])
                 (:board props))])
