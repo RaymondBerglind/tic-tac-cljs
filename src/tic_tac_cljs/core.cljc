@@ -104,8 +104,11 @@
                            "..."]
                    :current-player "O"})))}
   [state options]
-  (-> (check-box state options)
-      (toggle-player (if (= (:current-player state)
-                            "X")
-                       "O"
-                       "X"))))
+  (if (= (get-check-for-box state options)
+            ".")
+    (-> (check-box state options)
+        (toggle-player (if (= (:current-player state)
+                              "X")
+                         "O"
+                         "X")))
+    state))

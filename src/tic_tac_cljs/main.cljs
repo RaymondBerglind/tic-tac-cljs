@@ -14,6 +14,15 @@
                               :column (get-in event [:data :column])
                               :player (:current-player (deref state))})))
 
+(defn game-loop
+  [key state-atom old-state new-state]
+  (.log js/console (str "Switched the state: "
+                        new-state)))
+
+(add-watch state
+           :game-loop-watcher
+           game-loop)
+
 (defn main
   []
   (r/render [game {:state state
